@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/activity_horizontal_margin"
+    android:paddingVertical="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".CalculatorActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_header_size"
+                android:text="@string/calculator_txt_header_league" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <!-- Anzahl Schiedsrichter -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/calculator_txt_numofrefs" />
+
+                <Button
+                    android:layout_width="@dimen/calculator_incdec"
+                    android:layout_height="@dimen/calculator_incdec"
+                    android:layout_weight="0"
+                    android:text="@string/decrease"
+                    android:onClick="decreaseReferees"/>
+
+                <TextView
+                    android:id="@+id/calculator_value_numofrefs"
+                    android:layout_width="@dimen/calculator_value"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="" />
+
+                <Button
+                    android:layout_width="@dimen/calculator_incdec"
+                    android:layout_height="@dimen/calculator_incdec"
+                    android:layout_weight="0"
+                    android:text="@string/increase"
+                    android:onClick="increaseReferees"/>
+            </LinearLayout>
+
+            <!-- Aufwandsentschädigung -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/calculator_txt_sum" />
+
+                <Button
+                    android:layout_width="@dimen/calculator_incdec"
+                    android:layout_height="@dimen/calculator_incdec"
+                    android:layout_weight="0"
+                    android:text="@string/decrease"
+                    android:onClick="decreaseSum" />
+
+                <TextView
+                    android:id="@+id/calculator_value_payment"
+                    android:layout_width="@dimen/calculator_value"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="" />
+
+                <Button
+                    android:layout_width="@dimen/calculator_incdec"
+                    android:layout_height="@dimen/calculator_incdec"
+                    android:layout_weight="0"
+                    android:text="@string/increase"
+                    android:onClick="increaseSum" />
+            </LinearLayout>
+
+            <!-- 5 Euro für Kasse -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/calculator_txt_regionalCrew" />
+
+                <CheckBox
+                    android:id="@+id/calculator_value_sameRegion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:onClick="sameRegionChecked" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:barrierDirection="top" />
+
+            <!-- -->
+            <TextView
+                android:id="@+id/calculator_value_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/next"
+                android:onClick="nextActivity" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
